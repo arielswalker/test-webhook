@@ -14,3 +14,5 @@ jobs:
           webhook_type: 'json-extended'
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+          webhook_auth_type: "bearer"
+          webhook_auth: ${{ secrets.WEBHOOK_SECRET }}
