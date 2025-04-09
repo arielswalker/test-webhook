@@ -1,8 +1,7 @@
 name: Test Webhook
 
 on:
-  repository_dispatch:
-    types: [issues]  # The event_type you want to trigger the workflow with
+  workflow_dispatch: 
 
 jobs:
   build:
