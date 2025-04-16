@@ -87,14 +87,19 @@ jobs:
 
             const itemId = addItem.addProjectV2ItemById.item.id;
 
-            // Set iteration field
+            // Set Status column to "In Progress?"
+            const statusFieldId = "PVTSSF_lAHOCeen4M4A25DgzgsH0uk"; 
+            const inProgressOptionId = "47fc9ee4"; 
+            
             await github.graphql(`
-              mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: ProjectV2FieldValue!) {
+              mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
                 updateProjectV2ItemFieldValue(input: {
                   projectId: $projectId,
                   itemId: $itemId,
                   fieldId: $fieldId,
-                  value: $value
+                  value: {
+                    singleSelectOptionId: $optionId
+                  }
                 }) {
                   projectV2Item {
                     id
@@ -104,10 +109,6 @@ jobs:
             `, {
               projectId,
               itemId,
-              fieldId: iterationFieldId,
-              value: {
-                iterationId: currentIteration.id
-              }
+              fieldId: statusFieldId,
+              optionId: inProgressOptionId
             });
-
-            console.log("PR moved to current iteration");
