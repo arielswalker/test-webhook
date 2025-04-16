@@ -9,13 +9,9 @@ on:
 jobs:
   add-to-project:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-      contents: read
     steps:
       - name: Add to GitHub Project
-        uses: actions/add-to-project@v1
+        uses: actions/add-to-project@v1.0.2
         with:
           project-url: https://github.com/users/arielswalker/projects/2
         env:
