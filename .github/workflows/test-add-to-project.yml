@@ -14,5 +14,4 @@ jobs:
         uses: actions/add-to-project@v1.0.2
         with:
           project-url: https://github.com/users/arielswalker/projects/2
-        env:
-          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT }}
+          github-token: ${{ secrets.ADD_TO_PROJECT }}
