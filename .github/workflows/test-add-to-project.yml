@@ -19,4 +19,4 @@ jobs:
         with:
           project-url: https://github.com/users/arielswalker/projects/2
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ADD_TO_PROJECT }}
