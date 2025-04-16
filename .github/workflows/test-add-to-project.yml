@@ -4,10 +4,8 @@ on:
   issues:
     types: [opened]
   pull_request:
-    types: 
-      - opened
-      - reopened // remove after testing
-
+    types: [reopened]
+    
 jobs:
   add-to-project:
     runs-on: ubuntu-latest
